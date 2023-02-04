@@ -26,6 +26,31 @@ thunar thunar-archive-plugin file-roller
 paru -S nerd-fonts-jetbrains-mono ttf-material-design-icons
 ```
 
+**Prompt*
+```sh
+sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
+```
+
+#### Installing dotfiles 🚀
+```sh
+git clone https://github.com/k1tyoo/hyprland-dots.git && cd hyprland-dots
+cp -r .local/bin ~/ && chmod -r 755 ~/.local/bin
+echo 'export PATH="$HOME/.local/bin:PATH" >> ~/.zshrc
+cp -r .config ~/
+cp -r .wallpapers ~/
+```
+
+**launch Hyprland with wrappedhl*
+
+Note the environment variables configured before use
+```sh
+cd /usr/share/wayland-sessions
+sudo mv hyprland.desktop wrapped_hl.desktop
+
+# change Exec to the absolute path of wrappedhl
+# Exec=/home/username/.local/bin/wrappedhl
+```
+
 ## Credits
 
 _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
