@@ -1,0 +1,21 @@
+#!/bin/sh
+
+init_swww() {
+    num=$(ps -ef | grep swww-daemon | wc -l)
+    if [ $num -eq 1 ]; then
+        swww init
+    else
+        pkill swww-daemon
+        swww init
+    fi
+}
+
+wall_changer() {
+    init_swww
+    for imgfile in $(find $HOME/.wallpapers -name "*.png" | shuf -n1); do
+        swww img --transition-type grow --transition-pos 0.05,0.9 --transition-step 90 --transition-fps 60 $imgfile
+        break
+    done
+}
+
+wall_changer

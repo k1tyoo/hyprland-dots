@@ -1,0 +1,14 @@
+#!/bin/sh
+
+mute() {
+	muted="$(pamixer --get-mute)"
+	if $muted; then
+		pamixer -u
+	else
+		pamixer -m
+	fi
+}
+
+case "$1" in
+mute) mute ;;
+esac

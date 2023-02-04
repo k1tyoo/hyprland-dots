@@ -1,0 +1,181 @@
+{
+    "layer": "top",
+    "position": "top",
+    "exclusive": true,
+    "gtk-layer-shell": true,
+    "modules-left": [
+        "custom/launcher",
+        "wlr/workspaces",
+        "temperature",
+        "memory",
+        "cpu",
+        "custom/spotify",
+        // "mpd",
+        "custom/cava-internal"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/weather"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "network",
+        "battery",
+        "custom/powermenu",
+        "tray"
+    ],
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate"
+    },
+    "hyprland/window": {
+        "format": "{}"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%I:%M %p  %A %b %d}"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {}%|{avg_frequency}Ghz",
+        "max-length": 15,
+        "on-click": "",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 30,
+        "format-alt": " {percentage}%",
+        "format": "﬙ {used:0.1f}G",
+        "max-length": 10,
+        "tooltip": false
+    },
+    "backlight": {
+        "device": "amdgpu_bl0",
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "on-scroll-up": "light -A 5",
+        "on-scroll-down": "light -U 5",
+        "smooth-scrolling-threshold": 2.00,
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": "直 {essid}",
+        "interval": 1,
+        "format-ethernet": " wired",
+        "format-disconnected": "睊",
+        "on-click": "bash ~/.config/waybar/scripts/wifi",
+        "format-disconnected": "Disconnected  ",
+        "tooltip-format": "{ipaddr}|{netmask}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "  {volume}%",
+        "format-bluetooth-muted": " ",
+        "format-muted": "婢 Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pamixer -t",
+        "tooltip": false
+    },
+    "bluetooth": {
+        "on-click": "~/.config/waybar/scripts/rofi-bluetooth &",
+        "format": " {status}"
+    },
+    "battery": {
+        "bat": "BAT0",
+        "adapter": "ADP0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "max-length": 20,
+        "format": "{icon} {capacity}%",
+        "format-warning": "{icon} {capacity}%",
+        "format-critical": "{icon} {capacity}%",
+        "format-charging": "<span font-family:'Font Awesome 6 Free'></span> {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-full": "  {capacity}%",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ]
+    },
+    "temperature": {
+        "tooltip": false,
+        "format": " {temperatureC}°C"
+    },
+    "custom/weather": {
+        "exec": "python3 ~/.config/waybar/pyscripts/weather.py",
+        "restart-interval": 300,
+        "return-type": "json",
+        "on-click": "xdg-open https://weather.com/zh-CN/weather/today/l/51105435c953e1e91c2d4b3968047c50ca98779c434d1145833691551169adea"
+    },
+    "mpd": {
+        "max-length": 25,
+        "format": "<span foreground:'#bb9af7'></span> {title}",
+        "format-paused": " {title}",
+        "format-stopped": "<span foreground:'#bb9af7'></span>",
+        "format-disconnected": "",
+        "on-click": "mpc --quiet toggle",
+        "on-click-right": "mpc ls | mpc add",
+        "on-click-middle": "kitty --class:'ncmpcpp' ncmpcpp ",
+        "on-scroll-up": "mpc --quiet prev",
+        "on-scroll-down": "mpc --quiet next",
+        "smooth-scrolling-threshold": 5,
+        "tooltip-format": "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})"
+    },
+    "custom/spotify": {
+        "max-length": 25,
+        "exec": "python3 ~/.config/waybar/pyscripts/mediaplayer.py --player spotify",
+        "format": "  {}",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-double-click-right": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    },
+    "custom/powermenu": {
+        "format": " ⏻ ",
+        "on-click": "swaylock",
+        "tooltip": false
+    },
+    "custom/launcher": {
+        "format": "   ",
+        "on-click": "bash ~/.config/waybar/scripts/wallpaper-random",
+        "tooltip": false
+    },
+    "custom/wall": {
+        "on-click": "wallpaper_random",
+        "on-click-middle": "default_wall",
+        "on-click-right": "killall dynamic_wallpaper || dynamic_wallpaper &",
+        "format": " ﴔ ",
+        "tooltip": false
+    },
+    "custom/cava-internal": {
+        "exec": "sleep 1s && cava-internal",
+        "tooltip": false
+    },
+}
