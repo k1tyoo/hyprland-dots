@@ -96,6 +96,17 @@
         "on-click": "pamixer -t",
         "tooltip": false
     },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "婢 Muted",
+        "on-click": "pamixer -t",
+        "on-click-right": "helvum",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
     "bluetooth": {
         "on-click": "~/.config/waybar/scripts/rofi-bluetooth &",
         "format": " {status}"
