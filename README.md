@@ -10,4 +10,3 @@ _Awesome waybar setup: © [Ruixi-rebirth](https://github.com/Ruixi-rebirth)_
 
 _The most user-friendly neovim configuration: © [ayamir](https://github.com/ayamir)_ 🤯
 
----
