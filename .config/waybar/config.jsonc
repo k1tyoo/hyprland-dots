@@ -9,9 +9,9 @@
         "temperature",
         "memory",
         "cpu",
-        "custom/spotify",
+        "custom/spotify"
         // "mpd",
-        "custom/cava-internal"
+        // "custom/cava-internal"
     ],
     "modules-center": [
         "clock",
@@ -53,7 +53,7 @@
         "tooltip": false
     },
     "backlight": {
-        "device": "amdgpu_bl0",
+        "device": "nvidia_0",
         "format": "{icon} {percent}%",
         "format-icons": [
             "",
@@ -71,7 +71,7 @@
         "interval": 1,
         "format-ethernet": " wired",
         "format-disconnected": "睊",
-        "on-click": "bash ~/.config/waybar/scripts/wifi",
+        // "on-click": "bash ~/.config/waybar/scripts/wifi",
         "format-disconnected": "Disconnected  ",
         "tooltip-format": "{ipaddr}|{netmask}"
     },
