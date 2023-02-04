@@ -25,4 +25,6 @@ export MOZ_ENABLE_WAYLAND=1 firefox
 export LIBVA_DRIVER_NAME=radeonsi
 export VDPAU_DRIVER=radeonsi
 
+export RANGER_LOAD_DEFAULT_RC=false
+
 exec Hyprland
