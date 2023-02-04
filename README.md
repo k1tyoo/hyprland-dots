@@ -2,6 +2,30 @@
 
 <img src="https://i.imgur.com/C4FpPiG.png">
 
+#### Installing needed dependencies 📦
+	
+```sh
+paru -S hyprland-git polkit-kde-agent dunst grimblast rofi rofi-emoji wl-clipboard wf-recorder wlogout grimblast-git hyprpicker-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git
+```
+
+**Extras*
+```sh
+# themes
+paru -S catppuccin-gtk-theme-mocha catppuccin-cursors-mocha catppuccin-mocha-grub-theme-git nwg-look
+# apps
+paru -S ranger zsh neovim noise-suppression-for-voice
+```
+
+**If you want a Graphical file-manager*
+```sh
+thunar thunar-archive-plugin file-roller   
+```
+
+**Fonst*
+```sh
+paru -S nerd-fonts-jetbrains-mono ttf-material-design-icons
+```
+
 ## Credits
 
 _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
