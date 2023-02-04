@@ -21,7 +21,7 @@ paru -S ranger zsh neovim noise-suppression-for-voice
 thunar thunar-archive-plugin file-roller   
 ```
 
-**Fonst*
+**Fonts*
 ```sh
 paru -S nerd-fonts-jetbrains-mono ttf-material-design-icons
 ```
