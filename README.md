@@ -1,6 +1,6 @@
 ## 🥳 Setup
 
-<img src="https://imgur.com/a/QEq9Aqv">
+<img src="https://raw.githubusercontent.com/k1tyoo/CDN/main/img/setup.png">
 
 ## Credits
 
