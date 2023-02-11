@@ -17,7 +17,7 @@
 
 ## 🥳 Setup
 
-#### Installing needed dependencies 📦
+### Installing needed dependencies 📦
 
 ```sh
 yay -S hyprland-git polkit-kde-agent wl-clipboard wf-recorder wlogout grimblast-git hyprpicker-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype imagemagick swaylock-effects swayidle qt5-wayland qt6-wayland waybar-hyprland-git swww-git network-manager-applet blueman python-pip
@@ -29,7 +29,7 @@ _Make things rust_
 yay -S fd bat exa ripgrep ripgrep-all dust procs btop nvtop
 ```
 
-#### Extra 👽
+### Extra 👽
 
 _Theme_
 
@@ -65,7 +65,7 @@ chsh -s /bin/zsh
 sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
 ```
 
-#### Installing dotfiles 🚀
+### Installing dotfiles 🚀
 
 ```sh
 git clone https://github.com/k1tyoo/hyprland-dots.git && cd hyprland-dots
@@ -87,7 +87,7 @@ sudo mv hyprland.desktop wrappedhl.desktop
 
 Change session Exec parameter to the absolute path of wrappedhl
 
-#### Personal preference 💻
+### Personal preference 💻
 
 ```sh
 yay -S sddm-git spotify octopi firefox font-manager dconf-editor visual-studio-code-bin ntfs-3g
