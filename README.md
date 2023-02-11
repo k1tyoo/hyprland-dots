@@ -112,6 +112,14 @@ patch:
     - schema: clover
 ```
 
+_Digit tree_
+
+Document: [cbonsai](https://gitlab.com/jallbrit/cbonsai)
+
+```sh
+yay -S cbonsai
+```
+
 ## Credits
 
 _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
