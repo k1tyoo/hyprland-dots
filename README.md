@@ -1,54 +1,115 @@
-## 🥳 Setup
+# Overview
+
+- **Window Manager** • [Hyprland](https://github.com/hyprwm/Hyprland)
+- **Terminal** • [Kitty](https://sw.kovidgoyal.net/kitty/)
+- **Shell** • [Zsh](https://www.zsh.org)
+- **Prompt** • [Oh-my-zsh](https://ohmyz.sh/)
+- **Panel** • [Waybar](https://aur.archlinux.org/packages/waybar-hyprland-git)
+- **Notify Daemon** • [Dunst](https://github.com/dunst-project/dunst)
+- **Launcher** • [Rofi](https://github.com/davatorium/rofi)
+- **File Manager** • [Ranger](https://github.com/ranger/ranger)
+
+---
 
 <img src="https://i.imgur.com/C4FpPiG.png">
 
+---
+
+## 🥳 Setup
+
 #### Installing needed dependencies 📦
-	
+
 ```sh
-paru -S hyprland-git polkit-kde-agent dunst grimblast rofi rofi-emoji wl-clipboard wf-recorder wlogout grimblast-git hyprpicker-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype imagemagick swaylock-effects qt5-wayland qt6-wayland ripgrep waybar-hyprland-git
+yay -S hyprland-git polkit-kde-agent wl-clipboard wf-recorder wlogout grimblast-git hyprpicker-git xdg-desktop-portal-hyprland-git ffmpegthumbnailer tumbler wtype imagemagick swaylock-effects swayidle qt5-wayland qt6-wayland waybar-hyprland-git swww-git network-manager-applet blueman python-pip
 ```
 
-**Extras*
+_Make things rust_
+
 ```sh
-# themes
-paru -S catppuccin-gtk-theme-mocha catppuccin-cursors-mocha catppuccin-mocha-grub-theme-git nwg-look
-# apps
-paru -S ranger zsh neovim noise-suppression-for-voice
+yay -S fd bat exa ripgrep ripgrep-all dust procs btop nvtop
 ```
 
-**If you want a Graphical file-manager*
+#### Extra 👽
+
+_Theme_
+
 ```sh
-thunar thunar-archive-plugin file-roller   
+yay -S catppuccin-gtk-theme-mocha catppuccin-cursors-mocha catppuccin-mocha-grub-theme-git nwg-look
 ```
 
-**Fonts*
+_App_
+
 ```sh
-paru -S nerd-fonts-jetbrains-mono ttf-material-design-icons
+yay -S rofi rofi-emoji dunst ranger zsh neovim kitty
 ```
 
-**Prompt*
+_Graphical file-manager_
+
 ```sh
+yay -S thunar thunar-archive-plugin file-roller
+```
+
+_Fonts_
+
+```sh
+yay -S ttf-jetbrains-mono-nerd ttf-material-design-icons
+```
+
+_Prompt_
+
+```sh
+# zsh
+yay -S zsh
+chsh -s /bin/zsh
+# oy-my-zsh
 sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
 ```
 
 #### Installing dotfiles 🚀
+
 ```sh
 git clone https://github.com/k1tyoo/hyprland-dots.git && cd hyprland-dots
-cp -r .local/bin ~/ && chmod -r 755 ~/.local/bin
-echo 'export PATH="$HOME/.local/bin:PATH" >> ~/.zshrc
 cp -r .config ~/
-cp -r .wallpapers ~/
 ```
 
-**launch Hyprland with wrappedhl*
+_launch Hyprland with [wrappedhl](https://wiki.hyprland.org/Getting-Started/Quick-start/)_
 
-Note the environment variables configured before use
+Note the environment variables configured before use it
+
 ```sh
-cd /usr/share/wayland-sessions
-sudo mv hyprland.desktop wrapped_hl.desktop
+# wrappedhl
+cp -r ~/Downloads/hyprland-dots/.local/bin ~/ && chmod -R 755 ~/.local/bin
+echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.zshrc
+# session
+cd /usr/share/wayland-sessions/
+sudo mv hyprland.desktop wrappedhl.desktop
+```
 
-# change Exec to the absolute path of wrappedhl
-# Exec=/home/username/.local/bin/wrappedhl
+Change session Exec parameter to the absolute path of wrappedhl
+
+#### Personal preference 💻
+
+```sh
+yay -S sddm-git spotify octopi firefox font-manager dconf-editor visual-studio-code-bin ntfs-3g
+```
+
+_fcitx5_
+
+```sh
+yay -S fcitx5-im fcitx5-chinese-addons fcitx5-rime rime-cloverpinyin
+
+# one more thing
+mkdir -p ~/.local/share/fcitx5/rime
+nvim ~/.local/share/fcitx5/rime/default.custom.yaml
+```
+
+_Add the following to the file_
+
+```sh
+patch:
+  "menu/page_size": 8
+  schema_list:
+    - schema: clover
 ```
 
 ## Credits
@@ -58,4 +119,3 @@ _Beauty community: [r/unixporn](https://www.reddit.com/r/unixporn)._
 _Awesome waybar setup: © [Ruixi-rebirth](https://github.com/Ruixi-rebirth)_
 
 _The most user-friendly neovim configuration: © [ayamir](https://github.com/ayamir)_ 🤯
-
